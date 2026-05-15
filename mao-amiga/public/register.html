@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Serviços</title>
+
+    <style>
+        /* Style */
+
+        body {background-color: #F8FAFC; color: #1E293B; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; text-align: center;
+        }
+
+        h1 {color: #0D9488; margin-top: 20px;}
+
+        p {color: #64748B;}
+
+        nav {width: 100%; background-color: #f1f1f1; padding: 10px 0; margin-bottom: 20px;}
+
+        nav a {margin: 0 15px; text-decoration: none; color: #0D9488; font-weight: bold;}
+
+        /* Formulário */
+
+        .container-cadastro {display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; padding: 40px 20px; max-width: 900px;
+            margin: 0 auto;
+        }
+
+        form {display: flex; flex-direction: column; background: white; padding: 30px; border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); width: 100%; max-width: 500px;
+        }
+
+        input, textarea, select {width: 100%; padding: 12px; margin-bottom: 20px; border: 1.5px solid #E2E8F0;
+            border-radius: 8px; font-size: 16px; color: #1E293B; box-sizing: border-box; transition: border-color 0.3s ease;
+        }
+
+        button {background-color: #0D9488; color: white; border: none; padding: 16px; border-radius: 8px;
+            cursor: pointer; font-weight: bold; font-size: 18px; transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Volta ao Início</a> | 
+        <a href="/sobre">Sobre a Gente</a> | 
+        <a href="/servisos">Encontrar um Profissional</a>
+    </nav>
+
+    <h1>Cadastrar um Serviço</h1>
+
+    <p>
+        Junte-se à nossa rede. Seu trabalho pode ser o ponto de apoio que alguém precisa hoje.
+    </p>
+
+    <form action="/servisos/enviar" method="POST">
+        <label>Nome do Serviço:</label>
+        <input type="text" name="nome" required>
+
+        <label>Valor :</label>
+        <input type="number" step="0.01" name="valor" required>
+
+        <label>Descrição:</label>
+        <textarea name="descricao"></textarea>
+
+        <label>Nome:</label>
+        <input type="text" name="fornecedor" required>
+
+        <label>E-mail:</label>
+        <input type="email" name="email" required>
+
+        <label>Telefone:</label>
+        <input type="text" name="telefone" required>
+
+        <button type="submit">Enviar Dados</button>
+    </form>
+</body>
+</html>
